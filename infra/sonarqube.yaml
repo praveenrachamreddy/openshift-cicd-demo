@@ -68,15 +68,20 @@ spec:
             memory: 512Mi
       volumes:
       - name: sonarqube-temp
-        emptyDir: {}
+        persistentVolumeClaim:
+          claimName: sonarqube
       - name: sonarqube-conf
-        emptyDir: {}
+        persistentVolumeClaim:
+          claimName: sonarqube
       - name: sonarqube-data
-        emptyDir: {}
+        persistentVolumeClaim:
+          claimName: sonarqube
       - name: sonarqube-extensions
-        emptyDir: {}
+        persistentVolumeClaim:
+          claimName: sonarqube
       - name: sonarqube-logs
-        emptyDir: {}
+        persistentVolumeClaim:
+          claimName: sonarqube
 ---
 apiVersion: route.openshift.io/v1
 kind: Route
